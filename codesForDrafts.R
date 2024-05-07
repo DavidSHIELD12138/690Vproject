@@ -37,7 +37,7 @@ str(data)
 
 del1Draft = ggplot(Data.HQ, aes(x=reorder(`Fav.genre`, `Fav.genre`, function(x) -length(x)))) + 
   geom_bar(aes(fill="orange"), color="black", stat="count") +
-  geom_text(stat='count', aes(label=..count.., y=..count..), vjust=-0.5, color="black") +
+  geom_text(stat='count', aes(label=..count.., y=..count..), vjust=-0.3, color="black") +
   theme_minimal() +
   labs(title="Favorite Genres in Descending Order",
        subtitle="An Analysis of Music Genre Preferences (U.S.A., 2024)",
@@ -46,7 +46,7 @@ del1Draft = ggplot(Data.HQ, aes(x=reorder(`Fav.genre`, `Fav.genre`, function(x) 
        caption="Source: Music & Mental Health Survey Results. Annotations: Data visualized as of 04/2024.") +
   scale_fill_identity() + 
   theme(axis.text.x = element_text(angle=45, hjust=1)) + 
-  annotate("text", x=1, y=max(table(Data.HQ$`Fav genre`))-10, label="", color="red")
+  annotate("text", x=1, y=max(table(Data.HQ$`Fav genre`))-10, label="")
 del1Draft
 
 
@@ -75,8 +75,7 @@ del2Draft = ggplot(Data.HQ_Cleaned, aes(x=Age)) +
        x="Age",
        y="Count",
        caption="Source: Music & Mental Health Survey Results. Annotations: Data visualized as of 04/2024.") +
-  theme_minimal() +
-  annotate("text", x=max_age * 0.8, y=max_count, label="Most respondents are in this age range", color="red", size=4)
+  theme_minimal()
 del2Draft
 
 
@@ -141,10 +140,11 @@ del4Draft = ggplot(merged_data, aes(x = long, y = lat, group = group, fill = `Av
   geom_polygon(color = "orange") +
   coord_fixed(1.3) +
   labs(title = "Average Income of Musicians by State, 2024", 
-       subtitle="A Map Data (U.S.A., 2024)",
-       caption="Source: Music & Mental Health Survey Results. Annotations: Data visualized as of 04/2024.",
+       subtitle = "A Map Data (U.S.A., 2024)",
+       caption = "Source: Music & Mental Health Survey Results. Annotations: Data visualized as of 04/2024.",
        fill = "Average Wage") +
-  theme_minimal()
+  theme_minimal() +
+  theme(plot.caption = element_text(hjust = 0, size = 8, margin = margin(t = 10, r = 20)))
 del4Draft
 
 # save del4Draft ----------------------------------------------------------
