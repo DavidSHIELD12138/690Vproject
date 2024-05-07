@@ -1,0 +1,42 @@
+---
+title: "Lihui De DACSS 690V Final Project"
+bibliography: projectref.bib
+output: 
+  flexdashboard::flex_dashboard
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+## Sidebar {.sidebar}
+
+Preparing the dashboard based on the instructions given at @magallanes_reyes_data_2022, and @aden-buie_flexdashboard_2023.
+
+## Column {.tabset .tabset-fade}
+
+### Favorite Genres in Descending Order
+
+```{r}
+readRDS("del1Draft.rds")
+```
+
+### Age Distribution of Respondents
+
+```{r}
+readRDS("del2Draft.rds")
+```
+
+### Relationship Between Age and Daily Streaming Hours
+
+```{r}
+readRDS("del3Draft.rds")
+```
+
+### Average Income of Musicians by State, 2024
+
+```{r}
+readRDS("del4Draft.rds")
+```
+
+### References
