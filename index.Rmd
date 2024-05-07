@@ -13,6 +13,9 @@ library(flexdashboard) # always
 
 Preparing the dashboard based on the instructions given at @magallanes_reyes_data_2022, and @aden-buie_flexdashboard_2023.
 
+You can find the codes for this dashboard here:
+https://github.com/DavidSHIELD12138/690Vproject
+
 ## Column {.tabset .tabset-fade}
 
 ### Favorite Genres in Descending Order
